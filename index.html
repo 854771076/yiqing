@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="css/slide.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/slide.js"></script>
+    <style>
+        .ck-slide {
+            width:700px;
+            height:400px;
+            display:inline-block;
+        }
+        .ck-slide ul.ck-slide-wrapper {
+            height:100%;
+            width:100%;
+        }
+        .swrapper{
+            box-sizing:border-box;
+            padding-top: 70px;
+            width:100%;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul id="nav-list">
+            <a href="javascript:;">新闻报道</a>
+            <a href="javascript:;">疫情地图</a>
+            <a href="javascript:;">接种情况</a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </ul>
+    </div>
+    <div class="center">
+        <div class="main1" style="display: block;">
+            <div class="swrapper">
+                <div class="ck-slide">
+                    <ul class="ck-slide-wrapper">
+                        <li>
+                            <a href="javascript:;"><img src="images/1.jpg" alt="" ></a>
+                        </li>
+                        <li style="display:none">
+                            <a href="javascript:;"><img src="images/2.jpg" alt="" ></a>
+                        </li>
+                        <li style="display:none">
+                            <a href="javascript:;"><img src="images/3.jpg" alt="" ></a>
+                        </li>
+                        <li style="display:none">
+                            <a href="javascript:;"><img src="images/4.jpg" alt="" ></a>
+                        </li>
+                        <li style="display:none">
+                            <a href="javascript:;"><img src="images/5.jpg" alt="" ></a>
+                        </li>
+                    </ul>
+                    <a href="javascript:;" class="ctrl-slide ck-prev">上一张</a>
+                    <a href="javascript:;" class="ctrl-slide ck-next">下一张</a>
+                    <div class="ck-slidebox">
+                        <div class="slideWrap">
+                            <ul class="dot-wrap">
+                                <li class="current"><em>1</em></li>
+                                <li><em>2</em></li>
+                                <li><em>3</em></li>
+                                <li><em>4</em></li>
+                                <li><em>5</em></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotnews">
+                    <div class="newstop">
+                        <a href="javastript:;">热点新闻</a>
+                        
+                    </div>
+                    <ul class="hotnew">
+                        <li><a href="#">习近平新时代</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        
+    
+    <script>
+        $('.ck-slide').ckSlide({
+            autoPlay:true
+            /*dir:"x"*/
+        });
+    </script>
+</body>
+</html>

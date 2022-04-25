@@ -1,0 +1,173 @@
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a{color:black;text-decoration:none;}
+      a:hover{
+          color:skyblue;
+      }
+      #button {
+        width: 50px;
+        height: 50px;
+      }
+      #text {
+        height: 50px;
+        border: 1px solid #000;
+        background-color: aliceblue;
+      }
+      input {
+        float: left;
+      }
+      #text:active {
+        content: "";
+        height: 1px;
+      }
+      ul {
+        width: 900px;
+        margin: 0 auto;
+      }
+      li {
+        width: 300px;
+        /* height: 200px; */
+        list-style: none;
+        /* border: 0px solid #000; */
+        /* float: left; */
+        /* background-color: antiquewhite; */
+      }
+      #ll {
+        position: relative;
+      }
+      #ll img {
+        position: absolute;
+        bottom: 16px;
+      }
+      #z12 {
+        position: absolute;
+        font-size: 12px;
+        bottom: 0px;
+        right: -80px;
+        color: red;
+      }
+      
+      #page{
+          
+          height:25px;
+      }
+      #page>a{
+        background-color:#f7f6f3;
+        width:60px;
+        height:100%;
+        display:inline-block;
+        text-align: center;
+        line-height:25px;
+        border:1px solid #dddad2;
+      }
+      #page>a:hover{
+          text-decoration: underline;
+
+      }
+      .lei{
+          width:350px;
+          height:300px;
+          position: relative;
+      }
+      .lei h3{
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .main{
+        width: 100%;
+        word-wrap: break-word;
+        word-break:break-all;
+      }
+      .false{
+          width:100px;
+          color:red;
+          height:100px;
+          font-size:35px;
+          position: absolute;
+          line-height:100px;
+          border: 10px solid red;
+          border-radius: 60px;
+          text-align: center;
+          right:50px;
+          bottom: 50px
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lei"></div>
+    <div id="page" style="display: none;">
+        <a href="javascript:;" style="margin-right:50px" onclick="pre_page(p);" id="pre">上一页</a>
+        <a href="javascript:;" id="next" onclick="next_page(p);">下一页</a>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    var page=document.querySelector('#page');
+    window.p=1;
+    function data(p=1){
+        $.get(
+            "https://lab.isaaclin.cn/nCoV/api/rumors",
+            {
+              page:p,
+              num: "1",
+              rumorType:1
+            },
+            function (data, status) {
+              var lei=document.querySelector('.lei')
+              //console.log(data);
+              html=''
+              div=''
+              data=data.results
+              
+              for(var i=0;i<data.length;i++){
+                  date=new Date(Number(data[i].pubDate))
+                  //console.log(data[i])
+                  div='<div class="lei"><h3>'+data[i].title+'</h3><div class="main">&nbsp;&nbsp;&nbsp;&nbsp;'+data[i].body+'</div></div>'
+                  html+=div;
+                  //console.log(html)
+                  //console.log(div)
+              }
+            
+              lei.innerHTML=html;
+              page.style.display='block';
+            }
+          );
+    }
+    $(document).ready(function () {
+            data();
+        
+      });
+      function pre_page(p) {
+        
+        if(p<=1){
+            document.querySelector('#pre').style.cursor='no-drop';
+            return;
+        }else{
+            window.p--;
+            document.querySelector('#pre').style.cursor='pointer';
+        }
+        data(window.p);
+        
+        
+      }
+      function next_page(p) {
+        window.p++;
+        document.querySelector('#pre').style.cursor='pointer';
+        data(window.p);
+        
+      }
+      //next_page(2)
+  </script>
+</html>
