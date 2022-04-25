@@ -45,7 +45,7 @@ body{
     color:orange;
 }
 .hotnews{
-    width:calc(100% - 710px);
+    width:calc(100% - 695px);
     height:400px;
     float: right;
     box-sizing: border-box;
@@ -56,9 +56,10 @@ body{
     height:45px;
     width:100%;
     border-bottom: 1px solid #edeef0;
+    border-top: 2px solid orange;
 }
 .newstop a{
-    border-top: 2px solid orange;
+    
     height:45px;
     color:orange;
     font-size:20px;
@@ -67,6 +68,11 @@ body{
     line-height:45px;
     display:inline-block;
 }
+/* .newstop a:hover{
+    
+    
+} */
+
 .hotnew{
     height:calc(100% - 45px);
     width: 100%;
@@ -80,4 +86,11 @@ body{
     height: 35px;
     display: inline-block;
     line-height: 35px;
+}
+.hotnew>li>a:hover{
+    color: orange;
+
+}
+.content{
+    width: 100%;
 }

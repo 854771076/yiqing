@@ -9,7 +9,7 @@
     <script src="js/slide.js"></script>
     <style>
         .ck-slide {
-            width:700px;
+            width:690px;
             height:400px;
             display:inline-block;
         }
@@ -29,11 +29,12 @@
 <body>
     <div class="nav">
         <ul id="nav-list">
+            <a href="javascript:;">首页</a>
             <a href="javascript:;">新闻报道</a>
-            <a href="javascript:;">疫情地图</a>
+            <a href="#map">疫情地图</a>
             <a href="javascript:;">接种情况</a>
-            <a href="javascript:;"></a>
-            <a href="javascript:;"></a>
+            <a href="javascript:;">谣言辟谣</a>
+            
         </ul>
     </div>
     <div class="center">
@@ -72,19 +73,33 @@
                     </div>
                 </div>
                 <div class="hotnews">
-                    <div class="newstop">
-                        <a href="javastript:;">热点新闻</a>
-                        
+                    <div class="newstop" >
+                        <a href="javastript:;" >最新新闻</a>
+                        <a href="javastript:;" style="float:right">更多》</a>
                     </div>
                     <ul class="hotnew">
-                        <li><a href="#">习近平新时代</a></li>
+                        <!-- <li><a href="#">习近平新时代</a></li> -->
                     </ul>
                 </div>
             </div>
             </div>
+            <div class="content" style="display: block" data-index="0">
+                
+            </div>   
+            <div class="content" style="display: none" data-index="1">
+        
+            </div>
+            <div class="content" id="map" style="display: none" data-index="2">
+                111
+            </div>   
+            <div class="content" style="display: none" data-index="3">
+        
+            </div>   
+            <div class="content" style="display: none" data-index="4">
+        
+            </div>    
         </div>
-        
-        
+         
     
     <script>
         $('.ck-slide').ckSlide({
@@ -92,5 +107,8 @@
             /*dir:"x"*/
         });
     </script>
+    <script src="js/index.js"></script>
+    
+    
 </body>
 </html>
