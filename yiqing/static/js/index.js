@@ -32,38 +32,6 @@ var navs=document.querySelectorAll('#nav-list>a');
 
 //tab栏
 
-    function data(){
-        //console.log(p)
-        $.get(
-            "https://lab.isaaclin.cn/nCoV/api/news",
-            {
-              page:1,
-              num: "10",
-            },
-            function (data, status) {
-              var news=document.querySelector('.hotnew')
-              //console.log(data);
-              html=''
-              div=''
-              data=data.results
-              
-              for(var i=0;i<data.length;i++){
-                  date=new Date(Number(data[i].pubDate))
-                  div='<li><a href="'+data[i].sourceUrl+'" class="title">'+data[i].title+'</a></li>'
-                  html+=div;
-                  //console.log(html)
-                  //console.log(div)
-              }
-            
-              news.innerHTML=html;
+    
 
-            }
-          );
-    }
-    $(document).ready(function () {
-            data();
-        
-      });
-
-//最新新闻
 

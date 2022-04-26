@@ -1,4 +1,4 @@
-
+{% load static %}
 </html>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +58,22 @@
         right: -80px;
         color: red;
       }
-      
+      .news{
+          width: 600px;
+      }
+      .title{
+          width:70%;
+      }
+      .date{
+        width:30%;
+      }
+      .new td{
+          height: 35px;
+          line-height:35px
+      }
+      .new td{
+          font-size: 18px;
+      }
       #page{
           
           height:25px;
@@ -76,42 +91,31 @@
           text-decoration: underline;
 
       }
-      .lei{
-          width:350px;
-          height:300px;
-          position: relative;
-      }
-      .lei h3{
-        text-align: center;
-        margin-bottom: 10px;
-      }
-      .main{
-        width: 100%;
-        word-wrap: break-word;
-        word-break:break-all;
-      }
-      .false{
-          width:100px;
-          color:red;
-          height:100px;
-          font-size:35px;
-          position: absolute;
-          line-height:100px;
-          border: 10px solid red;
-          border-radius: 60px;
-          text-align: center;
-          right:50px;
-          bottom: 50px
-      }
     </style>
   </head>
   <body>
-    <div class="lei"></div>
+    <table class="news">
+        <tbody>
+            <!-- <tr class="new">
+                <td><a href="javascript:;" class="title">title</a></td>
+                <td class="date">date</td>
+            </tr>
+            <tr class="new">
+                <td><a href="javascript:;" class="title">title</a></td>
+                <td class="date">date</td>
+            </tr>
+            <tr class="new">
+                <td><a href="javascript:;" class="title">title</a></td>
+                <td class="date">date</td>
+            </tr> -->
+        </tbody>
+        
+    </table>
     <div id="page" style="display: none;">
         <a href="javascript:;" style="margin-right:50px" onclick="pre_page(p);" id="pre">上一页</a>
         <a href="javascript:;" id="next" onclick="next_page(p);">下一页</a>
     </div>
   </body>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/true.js"></script>
+  <script src="{%static 'js/jquery.min.js'%}"></script>
+  <script src="{%static 'js/news.js'%}"></script>
 </html>

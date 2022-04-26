@@ -1,12 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <title>index</title>
-    <link rel="stylesheet" href="css/slide.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/slide.js"></script>
+    <link rel="stylesheet" href="{%static 'css/slide.css'%}">
+    <link rel="stylesheet" href="{%static 'css/index.css'%}">
+    
     <style>
         .ck-slide {
             width:690px;
@@ -26,6 +27,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="nav">
         <ul id="nav-list">
@@ -43,19 +45,19 @@
                 <div class="ck-slide">
                     <ul class="ck-slide-wrapper">
                         <li>
-                            <a href="javascript:;"><img src="images/1.jpg" alt="" ></a>
+                            <a href="javascript:;"><img src="{%static 'images/1.jpg'%}" alt="" ></a>
                         </li>
                         <li style="display:none">
-                            <a href="javascript:;"><img src="images/2.jpg" alt="" ></a>
+                            <a href="javascript:;"><img src="{%static 'images/2.jpg'%}" alt="" ></a>
                         </li>
                         <li style="display:none">
-                            <a href="javascript:;"><img src="images/3.jpg" alt="" ></a>
+                            <a href="javascript:;"><img src="{%static 'images/3.jpg'%}" alt="" ></a>
                         </li>
                         <li style="display:none">
-                            <a href="javascript:;"><img src="images/4.jpg" alt="" ></a>
+                            <a href="javascript:;"><img src="{%static 'images/4.jpg'%}" alt="" ></a>
                         </li>
                         <li style="display:none">
-                            <a href="javascript:;"><img src="images/5.jpg" alt="" ></a>
+                            <a href="javascript:;"><img src="{%static 'images/5.jpg'%}" alt="" ></a>
                         </li>
                     </ul>
                     <a href="javascript:;" class="ctrl-slide ck-prev">上一张</a>
@@ -74,11 +76,14 @@
                 </div>
                 <div class="hotnews">
                     <div class="newstop" >
-                        <a href="javastript:;" >最新新闻</a>
-                        <a href="javastript:;" style="float:right">更多》</a>
+                        <a href="javascript:;" >最新新闻</a>
+                        <a href="javascript:;" style="float:right">更多》</a>
                     </div>
                     <ul class="hotnew">
                         <!-- <li><a href="#">习近平新时代</a></li> -->
+                        {% for i in data %}
+                          <li><a href="{{i.sourceUrl}}">{{i.title}}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -87,10 +92,10 @@
                 
             </div>   
             <div class="content" style="display: none" data-index="1">
-        
+                <!-- <iframe src="news" frameborder="0" height="100%" width="100%"></iframe> -->
             </div>
-            <div class="content" id="map" style="display: none" data-index="2">
-                111
+            <div class="content" id="map" style="display: none" data-index="2" >
+                <iframe src="map" frameborder="0" height="100%" width="100%"></iframe>
             </div>   
             <div class="content" style="display: none" data-index="3">
         
@@ -99,15 +104,22 @@
         
             </div>    
         </div>
-         
-    
+        
+        <script src="{%static 'js/jquery.min.js'%}"></script>
+        <!-- <script src="{%static 'js/echarts.min.js'%}"></script>
+        <script src="{%static 'js/china.js'%}"></script>  -->
+        <!-- <script src="js/map.js"></script> -->
+        <script src="{%static 'js/index.js'%}"></script>
+        <script src="{%static 'js/slide.js'%}"></script>
+        
+        
     <script>
         $('.ck-slide').ckSlide({
             autoPlay:true
             /*dir:"x"*/
         });
     </script>
-    <script src="js/index.js"></script>
+    
     
     
 </body>

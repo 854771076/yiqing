@@ -1,15 +1,14 @@
 var page=document.querySelector('#page');
-    window.p=1;
-    function data(p=1){
-        console.log(p)
+    window.p=Math.floor(Math.random() * 100+1);
+    function yaodata(p=1){
         $.get(
-            "https://lab.isaaclin.cn/nCoV/api/news",
+            "https://lab.isaaclin.cn/nCoV/api/rumors",
             {
               page:p,
-              num: "15",
+              num: "1",
             },
             function (data, status) {
-              var news=document.querySelector('.news')
+              var lei=document.querySelector('.lei')
               //console.log(data);
               html=''
               div=''
@@ -17,19 +16,20 @@ var page=document.querySelector('#page');
               
               for(var i=0;i<data.length;i++){
                   date=new Date(Number(data[i].pubDate))
-                  div='<tr class="new"><td><a href="'+data[i].sourceUrl+'" class="title">'+data[i].title+'</a></td><td class="date">'+date.toLocaleDateString().replace(/\//g, "-") + " " + date.toTimeString().substr(0, 8)+'</td></tr>'
+                  //console.log(data[i])
+                  div='<div class="lei"><h3>'+data[i].title+'</h3><div class="main">&nbsp;&nbsp;&nbsp;&nbsp;'+data[i].body+'</div><div class="false">假</div></div>'
                   html+=div;
                   //console.log(html)
                   //console.log(div)
               }
             
-              news.innerHTML=html;
+              lei.innerHTML=html;
               page.style.display='block';
             }
           );
     }
     $(document).ready(function () {
-            data();
+        yaodata();
         
       });
       function pre_page(p) {
@@ -41,14 +41,14 @@ var page=document.querySelector('#page');
             window.p--;
             document.querySelector('#pre').style.cursor='pointer';
         }
-        data(window.p);
+        yaodata(window.p);
         
         
       }
       function next_page(p) {
         window.p++;
         document.querySelector('#pre').style.cursor='pointer';
-        data(window.p);
+        yaodata(window.p);
         
       }
       //next_page(2)
