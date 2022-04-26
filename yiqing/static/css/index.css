@@ -109,6 +109,7 @@ body{
     margin-top: 10px;
     
     padding: 0px 20px;
+    
 }
 .knowledges>ul>li{
     float: left;
@@ -165,7 +166,7 @@ body{
 }
 .knowimg{
     
-    float: left;
+    float: right;
     width: 30%;
     height: 130px;
 }
