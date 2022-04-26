@@ -69,17 +69,22 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'django_pro.wsgi.application'
+#host=124.223.62.222
+#db=spider
+#user=spider
+#password=Rb7snZyNsf3mS6GR
 
-
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'spider',  #zhaopin_test   #recruit_info
+        'USER':'spider' ,        #os.environ.get('DJANGO_MYSQL_USER')
+        'PASSWORD': 'Rb7snZyNsf3mS6GR',     #os.environ.get('DJANGO_MYSQL_PASSWORD')
+        'HOST': '124.223.62.222',   #os.environ.get('DJANGO_MYSQL_HOST')
+        'PORT': 3306,
+        'OPTIONS': {'charset': 'utf8mb4'},
+    }
+}
 
 
 # Password validation

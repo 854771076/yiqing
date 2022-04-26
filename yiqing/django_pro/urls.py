@@ -19,6 +19,5 @@ from application import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    path('map/',views.map),
     path('news/',views.news),
 ]

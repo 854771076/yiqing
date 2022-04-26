@@ -10,7 +10,7 @@
     
     <style>
         .ck-slide {
-            width:690px;
+            width:680px;
             height:400px;
             display:inline-block;
         }
@@ -31,7 +31,7 @@
 <body>
     <div class="nav">
         <ul id="nav-list">
-            <a href="javascript:;">首页</a>
+            <a href="#">首页</a>
             <a href="javascript:;">新闻报道</a>
             <a href="#map">疫情地图</a>
             <a href="javascript:;">接种情况</a>
@@ -89,13 +89,61 @@
             </div>
             </div>
             <div class="content" style="display: block" data-index="0">
-                
+                <div class="knowledges">
+                    <ul>
+                        <li><span >&nbsp;&nbsp;全部&nbsp;&nbsp;</span> </li>
+                        <li><span >&nbsp;我要出行&nbsp;</span></li>
+                        <li><span >&nbsp;家有小孩&nbsp;</span></li>
+                        <li><span >&nbsp;给医务者&nbsp;</span></li>
+                        <li><span >&nbsp;我宅在家&nbsp;</span></li>
+                        <li><span >&nbsp;家有老人&nbsp;</span></li>
+                        <li><span >&nbsp;家有孕妇&nbsp;</span></li>
+                        <div><strong><i>防护小知识</i> </strong> </div>
+                    </ul>
+
+                    <div id="knowledges">
+                        {% for j in knows %}
+                            <div class="knowledge knowid{{j.contentType}}">
+                                <div class="knowtitle">
+                                    {% if  j.contentType == 1 %}
+                                    <span>&nbsp;我要出行&nbsp;</span>&nbsp;&nbsp;<a href="{{j.linkUrl}}">{{j.title}}</a>
+                                    {% elif  j.contentType == 2 %}
+                                    <span>&nbsp;家有小孩&nbsp;</span>&nbsp;&nbsp;<a href="{{j.linkUrl}}">{{j.title}}</a>
+                                    {% elif  j.contentType == 3 %}
+                                    <span>&nbsp;给医务者&nbsp;</span>&nbsp;&nbsp;<a href="{{j.linkUrl}}">{{j.title}}</a>
+                                    {% elif  j.contentType == 4 %}
+                                    <span>&nbsp;我宅在家&nbsp;</span>&nbsp;&nbsp;<a href="{{j.linkUrl}}">{{j.title}}</a>
+                                    {% elif  j.contentType == 5 %}
+                                    <span>&nbsp;家有老人&nbsp;</span>&nbsp;&nbsp;<a href="{{j.linkUrl}}">{{j.title}}</a>
+                                    {% elif  j.contentType == 6 %}
+                                    <span>&nbsp;家有孕妇&nbsp;</span>&nbsp;&nbsp;<a href="{{j.linkUrl}}">{{j.title}}</a>
+                                    {% endif %}
+                                    <div class="knowtime">2022-4-26</div>
+                                </div>
+                                
+                                <div class="knowimg">
+                                    <a href="{{j.linkUrl}}">
+                                        <img src="{{j.imgUrl}}" alt="">
+                                    </a>
+                                    
+                                </div>
+                                
+                            </div>
+                        {% endfor %}
+                        
+                    </div>
+                    
+                </div>
+                <div  style="clear:both;width:1200px;background-color:white;padding:80px 0">
+                    <div id="map"></div>
+                </div>
             </div>   
+            
             <div class="content" style="display: none" data-index="1">
                 <!-- <iframe src="news" frameborder="0" height="100%" width="100%"></iframe> -->
             </div>
-            <div class="content" id="map" style="display: none" data-index="2" >
-                <iframe src="map" frameborder="0" height="100%" width="100%"></iframe>
+            <div class="content" style="display: none" data-index="2">
+               
             </div>   
             <div class="content" style="display: none" data-index="3">
         
@@ -106,9 +154,9 @@
         </div>
         
         <script src="{%static 'js/jquery.min.js'%}"></script>
-        <!-- <script src="{%static 'js/echarts.min.js'%}"></script>
-        <script src="{%static 'js/china.js'%}"></script>  -->
-        <!-- <script src="js/map.js"></script> -->
+        <script src="{%static 'js/echarts.min.js'%}"></script>
+        <script src="{%static 'js/china.js'%}"></script> 
+        <script src="{%static 'js/map.js'%}"></script>
         <script src="{%static 'js/index.js'%}"></script>
         <script src="{%static 'js/slide.js'%}"></script>
         

@@ -26,6 +26,10 @@ body{
     z-index: 100;
     background-color:  white;
 }
+.main1{
+    box-sizing: border-box;
+    padding: 0 20px;
+}
 .nav ul{
    margin: 0 auto; 
    width:1200px;
@@ -48,7 +52,7 @@ body{
     height:400px;
     float: right;
     box-sizing: border-box;
-    padding:0 20px
+    /* padding:0 20px */
     
 }
 .newstop{
@@ -93,7 +97,86 @@ body{
 
 .content{
     width: 100%;
-    height: 1000px;
+
     position: absolute;
     background-color: #fff;
+    box-sizing: border-box;
+}
+.knowledges{
+    box-sizing: border-box;
+    width: 100%;
+    height: 45px;
+    margin-top: 10px;
+    
+    padding: 0px 20px;
+}
+.knowledges>ul>li{
+    float: left;
+    width: 100px;
+    margin: auto 0;
+    text-align: center;
+    line-height:45px;
+    font-size:20px;
+    cursor: pointer;
+}
+.knowledges>ul{
+    list-style: none;
+    border-bottom: 1px solid #edeef0;
+
+    width: 100%;
+    height: 45px;
+}
+.knowledges>ul>li>span:hover{
+    color: white;
+    border-radius: 10px;
+    background-color:skyblue
+}
+.knowledges>ul>div{
+    color: skyblue;
+    float: right;
+    line-height: 45px;
+    font-size: 20px;
+    
+}
+.knowledge{
+    width: 50%;
+    height: 150px;
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px 10px;
+
+}
+.knowtime{
+    color: #999999;
+    position: absolute;
+    top:70%;
+    left:20px;
+}
+.knowtitle{
+    width: 65%;
+    height: 130px;
+    float: left;
+}
+.knowtitle>span{
+    background-color: pink;
+    border-radius: 5px;
+    color: white;
+}
+.knowimg{
+    
+    float: left;
+    width: 30%;
+    height: 130px;
+}
+.knowimg>a>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+#map{
+    
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
 }
