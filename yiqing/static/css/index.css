@@ -97,7 +97,7 @@ body{
 
 .content{
     width: 100%;
-
+    padding: 0px 20px;
     position: absolute;
     background-color: #fff;
     box-sizing: border-box;
@@ -108,7 +108,7 @@ body{
     height: 45px;
     margin-top: 10px;
     
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
     
 }
 .knowledges>ul>li{
@@ -180,4 +180,58 @@ body{
     width: 800px;
     height: 800px;
     margin: 0 auto;
+}
+.heros{
+    border-top: 1px solid #edeef0 ;
+}
+.hero{
+    /* height: 350px; */
+    width: 100%;
+    height: 450px;
+    border-bottom: 1px solid #edeef0;
+    box-sizing: border-box;
+    padding: 20px 0;
+    
+}
+.heroinfo{
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+.herodata{
+    /* height: 100%; */
+    width: 60%;
+    display: inline-block;
+}
+.herodata>p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 11;
+    text-overflow: ellipsis;
+    
+}
+.herodata>span{
+    display: block;
+    width: 100%;
+    
+    border-bottom: 1px solid #fa3332;
+}
+.herodata>span>strong>i{
+    font-size: 20px;
+    color: #fa3332;
+
+}
+.heroimg{
+    position: absolute;
+    width: 25%;
+    height: 350px;
+    display: inline-block;
+    right: 20px;
+    
+}
+.heroimg>img{
+    width: 100%;
+    height: 95%;
+    border-radius: 5px;
 }

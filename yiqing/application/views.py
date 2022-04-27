@@ -10,7 +10,8 @@ def index(request):
     f=open(r'C:\Users\awsless\Desktop\疫情\yiqing\static\data\knowledge.json','r',encoding='utf8')
     knows=json.loads(f.read())['data']
     f.close()
-    content={'data':news,'knows':knows}
+    heros=Hero.objects.all()
+    content={'data':news,'knows':knows,'heros':heros}
         
     return render(request, 'index.html',content)
 def news(request):
