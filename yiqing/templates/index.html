@@ -25,6 +25,7 @@
 
 
         }
+        
     </style>
 </head>
 
@@ -32,7 +33,7 @@
     <div class="nav">
         <ul id="nav-list">
             <a href="#">首页</a>
-            <a href="news" target="_blank">新闻报道</a>
+            <a href="news" >新闻报道</a>
             <a href="#map">疫情地图</a>
             <a href="javascript:;">接种情况</a>
             <a href="javascript:;">谣言辟谣</a>
@@ -76,8 +77,8 @@
                 </div>
                 <div class="hotnews">
                     <div class="newstop" >
-                        <a href="javascript:;" >最新新闻</a>
-                        <a href="javascript:;" style="float:right">更多》</a>
+                        <a href="/news" >最新新闻</a>
+                        <a href="/news" style="float:right">更多》</a>
                     </div>
                     <ul class="hotnew">
                         <!-- <li><a href="#">习近平新时代</a></li> -->
@@ -91,7 +92,7 @@
             <div class="content" style="display: block" data-index="0">
                 <div class="knowledges">
                     <ul>
-                        <li><span >&nbsp;&nbsp;全部&nbsp;&nbsp;</span> </li>
+                        <li><span id="allknowledges">&nbsp;&nbsp;全部&nbsp;&nbsp;</span> </li>
                         <li><span >&nbsp;我要出行&nbsp;</span></li>
                         <li><span >&nbsp;家有小孩&nbsp;</span></li>
                         <li><span >&nbsp;给医务者&nbsp;</span></li>
@@ -100,7 +101,6 @@
                         <li><span >&nbsp;家有孕妇&nbsp;</span></li>
                         <div><strong><i>防护小知识</i> </strong> </div>
                     </ul>
-
                     <div id="knowledges">
                         {% for j in knows %}
                             <div class="knowledge knowid{{j.contentType}}">
@@ -134,7 +134,7 @@
                     </div>
                     
                 </div>
-                <div  style="clear:both;width:1200px;background-color:white;padding:80px 0;border-bottom: 1px #edeef0 solid;border-top: 1px #edeef0 solid;">
+                <div  style="clear:both;width:100%;background-color:white;padding:80px 0;border-bottom: 1px #edeef0 solid;border-top: 1px #edeef0 solid;">
                     <div id="map"></div>
                 </div>
             </div>   

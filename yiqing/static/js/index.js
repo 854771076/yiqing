@@ -11,7 +11,7 @@ var navs=document.querySelectorAll('#nav-list>a');
             //         this.children[0].style.display='none';
             //     })
             // }
-            if(i!=2){
+            if(i!=2 ){
                 navs[i].addEventListener('click',function(e){
                     for(var i=0;i<navs.length;i++)
                     {
