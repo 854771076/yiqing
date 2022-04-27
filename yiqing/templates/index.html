@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Access-Control-Allow-Origin" content="*" />
-    <title>index</title>
+    <title>新冠疫情资讯网</title>
     <link rel="stylesheet" href="{%static 'css/slide.css'%}">
     <link rel="stylesheet" href="{%static 'css/index.css'%}">
-    
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <style>
         .ck-slide {
             width:680px;
@@ -36,7 +36,7 @@
             <a href="#map">疫情地图</a>
             <a href="javascript:;">接种情况</a>
             <a href="javascript:;">谣言辟谣</a>
-            <a href="javascript:;">抗疫英雄</a>
+            <a href="#">抗疫英雄</a>
         </ul>
     </div>
     <div class="center">
@@ -151,7 +151,7 @@
             <div class="content" style="display: none" data-index="4">
         
             </div>
-            <div class="content" style="display: none" data-index="5">
+            <div class="content" id="heros" style="display: none" data-index="5">
                 <div class="heros">
                     {% for hero in heros %}
                     <div class="hero">
