@@ -12,7 +12,10 @@ def index(request):
     knows=json.loads(f.read())['data']
     f.close()
     heros=Hero.objects.all()
-    content={'data':news,'knows':knows,'heros':heros}
+    VaccineSituationData=requests.get('https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=VaccineSituationData')
+    VaccineSituationData.encodingcoding=VaccineSituationData.apparent_encoding
+    VaccineSituationData=json.loads(VaccineSituationData.text)['data']['VaccineSituationData']
+    content={'data':news,'knows':knows,'heros':heros,'VaccineSituationData':VaccineSituationData}
         
     return render(request, 'index.html',content)
 def news(request):
@@ -31,7 +34,7 @@ def news(request):
     else:
         page=1
     
-    news=requests.get(f'https://lab.isaaclin.cn/nCoV/api/news?page={page}&num=40')
+    news=requests.get(f'https://lab.isaaclin.cn/nCoV/api/news?page={page}&num=60')
     news.encodingcoding=news.apparent_encoding
     news=json.loads(news.text)['results']
     for i in news:

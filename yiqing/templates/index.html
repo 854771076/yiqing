@@ -146,7 +146,27 @@
                
             </div>   
             <div class="content" style="display: none" data-index="3">
-        
+                <div class="Vaccinehead">
+                    <ul>
+                        <li>&nbsp;国家(地区)&nbsp;</li>
+                        <li>&nbsp;积累接种&nbsp;</li>
+                        <li>&nbsp;每百人&nbsp;</li>
+                        <li>&nbsp;疫苗研制单位&nbsp;</li>
+                        <li style="width:20%;margin-right: 0;">&nbsp;更新时间&nbsp;</li>
+                    </ul>
+                </div>
+                <div class="Vaccinebody">
+                    {% for Situation in VaccineSituationData %}
+                    <div class="Vsituation">
+                        <div><strong>{{Situation.country}}</strong></div>
+                        <div>{{Situation.total_vaccinations}}</div>
+                        <div>{{Situation.total_vaccinations_per_hundred}}</div>
+                        <div>{{Situation.vaccinations}}</div>
+                        <div >{{Situation.date}}</div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
             </div>   
             <div class="content" style="display: none" data-index="4">
         
