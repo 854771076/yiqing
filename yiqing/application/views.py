@@ -43,3 +43,16 @@ def news(request):
         i['pubDate']=time.strftime('%Y-%m-%d %H:%M:%S',times)
     content={'news':news,'page':int(page)}
     return render(request, 'news.html',content)
+def rumors(request):
+    if request.GET:
+        page=request.GET.get('page')
+        page=int(page)
+
+    else:
+        page=1
+    
+    rumors=requests.get(f'https://lab.isaaclin.cn/nCoV/api/rumors?page={page}&num=60&rumorType=0')
+    rumors.encodingcoding=rumors.apparent_encoding
+    rumors=json.loads(rumors.text)['results']
+    content={'rumors':rumors,'page':int(page)}
+    return render(request, 'rumors.html',content)

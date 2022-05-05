@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
     path('news/',views.news),
+    path('rumors/',views.rumors),
 ]

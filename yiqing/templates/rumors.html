@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <link rel="stylesheet" href="{%static 'css/index.css' %}">
+    
+    <title>谣言辟谣</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html{
+        width:100%
+      }
+      body{
+        width:100%
+      }
+      a{color:black;text-decoration:none;}
+      a:hover{
+          color:orange;
+      }
+      #button {
+        width: 50px;
+        height: 50px;
+      }
+      #text {
+        height: 50px;
+        border: 1px solid #000;
+        background-color: aliceblue;
+      }
+      input {
+        float: left;
+      }
+      #text:active {
+        content: "";
+        height: 1px;
+      }
+      ul {
+        width: 900px;
+        margin: 0 auto;
+      }
+      li {
+        width: 300px;
+        /* height: 200px; */
+        list-style: none;
+        /* border: 0px solid #000; */
+        /* float: left; */
+        /* background-color: antiquewhite; */
+      }
+      #ll {
+        position: relative;
+      }
+      #ll img {
+
+        position: absolute;
+        bottom: 16px;
+      }
+      #z12 {
+        position: absolute;
+        font-size: 12px;
+        bottom: 0px;
+        right: -80px;
+        color: red;
+      }
+      .rumors{
+          width: 100%;
+      }
+      .rumor td.date{
+          width:200px;
+          font-size: 15px;;
+      }
+      
+      .rumor td{
+          height: 35px;
+          line-height:35px;
+          border-bottom: 1px #edeef0 dashed;
+
+      }
+      .rumor td{
+          font-size: 18px;
+      }
+      #page{
+          
+          height:30px;
+          width:340px;
+          margin: 50px auto;
+      }
+      #page>a{
+        background-color:#f7f6f3;
+        
+        height:25px;
+        display:inline-block;
+        text-align: center;
+        line-height:25px;
+        border:1px solid #dddad2;
+      }
+      #page>a:hover{
+          text-decoration: underline;
+          color:black
+          
+      }
+      .jump{
+        display:inline-block;
+        width:25px
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <ul id="nav-list">
+          <a href="/" target="_blank">首页</a>
+          <a href="news">新闻报道</a>
+          <a href="/#map" target="_blank">疫情地图</a>
+          <a href="javascript:;">接种情况</a>
+          <a href="#" style="color:orange;background-color:#edeef0">谣言辟谣</a>
+          <a href="/" target="_blank">抗疫英雄</a>
+      </ul>
+  </div>
+    <div class="center" style="padding:0 20px;padding-top:70px;box-sizing: border-box;">
+      <table class="rumors">
+        <tbody>
+            
+            {% for i in rumors  %}
+            <tr class="rumor">
+              <td class="date">{{i.id}}</td>
+              <td><a href="{{i.sourceUrl}}" class="title">{{i.title}}</a></td>
+              
+          </tr>
+            {% endfor %}
+        </tbody>
+        
+    </table>
+    <div id="page">
+        <a href="?page={{page|add:-1}}" style="margin-right:25px" id="pre" >&nbsp;上一页&nbsp;</a>
+        {% if page == 1  %}
+        <a href="#" id="this" class="jump">1</a>
+        <a href="?page=2"  class="jump">2</a>
+        <a href="?page=3"  class="jump">3</a>
+        <a href="?page=4"  class="jump">4</a>
+        <a href="?page=5"  style="margin-right:25px" class="jump">5</a>
+        {% elif page == 2 %}
+        <a href="?page=1"  class="jump">1</a>
+        <a href="#" id="this" class="jump">2</a>
+        <a href="?page=3"  class="jump">3</a>
+        <a href="?page=4"  class="jump">4</a>
+        <a href="?page=5"  style="margin-right:25px" class="jump">5</a>
+        {% else %}
+        <a href="?page={{page|add:-2}}"  class="jump">{{page|add:-2}}</a>
+        <a href="?page={{page|add:-1}}"  class="jump">{{page|add:-1}}</a>
+        <a href="#" id="this" class="jump">{{page}}</a>
+        <a href="?page={{page|add:1}}"  class="jump">{{page|add:1}}</a>
+        <a href="?page={{page|add:2}}"  style="margin-right:25px" class="jump">{{page|add:2}}</a>
+        {% endif %}
+        
+        <a href="?page={{page|add:1}}" id="next" >&nbsp;下一页&nbsp;</a>
+    </div>
+    </div>
+    
+  </body>
+  <script>
+    var pre=document.querySelector('#pre')
+    var page='{{page}}'
+    pre.onmouseover=function(){
+      if(page=='1'){
+        // this.style.cursor='no-drop';
+        this.style.pointerEvents='none'
+      }
+    }
+    pre.onmouseout=function(){
+      if(page!='1'){
+        this.style.cursor='pointer';
+        
+      }
+    }
+    var thisa=document.querySelector('#this')
+    thisa.style.backgroundColor='orange'  
+  </script>
+</html>
