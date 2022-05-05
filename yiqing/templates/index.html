@@ -35,9 +35,9 @@
             <a href="#">首页</a>
             <a href="news" >新闻报道</a>
             <a href="#map" id="navmap">疫情地图</a>
-            <a href="javascript:;" id="navVaccine">接种情况</a>
+            <a href="#" id="navVaccine">接种情况</a>
             <a href="rumors">谣言辟谣</a>
-            <a href="javascript:;" id="navhero">抗疫英雄</a>
+            <a href="#" id="navhero">抗疫英雄</a>
         </ul>
     </div>
 
@@ -223,6 +223,9 @@
             {
                 navs[i].style.backgroundColor='';
                 navs[i].style.color='';
+                if(i==0){
+                    continue
+                }
                 contents[i].style.display='none';
             }
             navmap.style.backgroundColor='#edeef0';
