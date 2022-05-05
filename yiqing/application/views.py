@@ -5,6 +5,7 @@ import json
 from application.models import Hero
 # Create your views here.
 def index(request):
+    nav=request.GET.get('nav','')
     news=requests.get('https://lab.isaaclin.cn/nCoV/api/news?page=1&num=10')
     news.encodingcoding=news.apparent_encoding
     news=json.loads(news.text)['results']
@@ -15,7 +16,7 @@ def index(request):
     VaccineSituationData=requests.get('https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=VaccineSituationData')
     VaccineSituationData.encodingcoding=VaccineSituationData.apparent_encoding
     VaccineSituationData=json.loads(VaccineSituationData.text)['data']['VaccineSituationData']
-    content={'data':news,'knows':knows,'heros':heros,'VaccineSituationData':VaccineSituationData}
+    content={'data':news,'knows':knows,'heros':heros,'VaccineSituationData':VaccineSituationData,'nav':nav}
         
     return render(request, 'index.html',content)
 def news(request):

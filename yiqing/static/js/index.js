@@ -2,7 +2,7 @@ var navs=document.querySelectorAll('#nav-list>a');
         var contents=document.querySelectorAll('.content');
         var flag=0;
         for(var i=0;i<navs.length;i++){
-            navs[i].setAttribute('data-index',i);
+            //navs[i].setAttribute('data-index',i);
             // if(i<2){
             //     navs[i].addEventListener('mouseover',function(){
             //         this.children[0].style.display='block';
@@ -114,4 +114,5 @@ knownav[6].onclick=function(){
         know6[i].style.display='block';
     }
 }
+
 

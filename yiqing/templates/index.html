@@ -34,12 +34,13 @@
         <ul id="nav-list">
             <a href="#">首页</a>
             <a href="news" >新闻报道</a>
-            <a href="#map">疫情地图</a>
-            <a href="javascript:;">接种情况</a>
+            <a href="#map" id="navmap">疫情地图</a>
+            <a href="javascript:;" id="navVaccine">接种情况</a>
             <a href="rumors">谣言辟谣</a>
-            <a href="#">抗疫英雄</a>
+            <a href="javascript:;" id="navhero">抗疫英雄</a>
         </ul>
     </div>
+
     <div class="center">
         <div class="main1" style="display: block;">
             <div class="swrapper">
@@ -210,7 +211,44 @@
             /*dir:"x"*/
         });
     </script>
-    
+    <script>
+        var navname='{{nav}}'
+        var navs=document.querySelectorAll('#nav-list>a');
+        var navmap=document.getElementById('navmap');
+        var navVaccine=document.getElementById('navVaccine');
+        var navhero=document.getElementById('navhero');
+        var contents=document.querySelectorAll('.content');
+        if(navname=='map'){
+            for(var i=0;i<navs.length;i++)
+            {
+                navs[i].style.backgroundColor='';
+                navs[i].style.color='';
+                contents[i].style.display='none';
+            }
+            navmap.style.backgroundColor='#edeef0';
+            navmap.style.color='orange';
+        }else if(navname=='Vaccine'){
+            for(var i=0;i<navs.length;i++)
+            {
+                navs[i].style.backgroundColor='';
+                navs[i].style.color='';
+                contents[i].style.display='none';
+            }
+            navVaccine.style.backgroundColor='#edeef0';
+            navVaccine.style.color='orange';
+            contents[Number(navVaccine.getAttribute('data-index'))].style.display='block';
+        }else if(navname=='hero'){
+            for(var i=0;i<navs.length;i++)
+            {
+                navs[i].style.backgroundColor='';
+                navs[i].style.color='';
+                contents[i].style.display='none';
+            }
+            navhero.style.backgroundColor='#edeef0';
+            navhero.style.color='orange';
+            contents[Number(navhero.getAttribute('data-index'))].style.display='block';
+        }
+    </script>
     
     
 </body>
