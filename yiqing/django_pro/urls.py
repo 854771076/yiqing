@@ -15,10 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from application import views
+from application import views as app
+from mask import views as mask
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',views.index),
-    path('news/',views.news),
-    path('rumors/',views.rumors),
+    path('admin', admin.site.urls),
+    path('',app.index),
+    path('news',app.news),
+    path('rumors',app.rumors),
+    path('mask',mask.index),
+    path('delect',mask.imguploadform),
+    path('resimg',mask.resimg),
+    path('oldimg',mask.oldimg),
 ]
