@@ -55,7 +55,11 @@
                 
             </form>
             <div id="jieshi" style="margin:0 1%;margin-top:80px;width:100%">
+                {% if nums == none%}
+                <strong>结果：</strong> 识别到NAN个人戴了口罩,NAN个人没戴或没戴好口罩。
+                {% else %}
                 <strong>结果：</strong> 识别到{{nums}}个人戴了口罩,{{bad}}个人没戴或没戴好口罩。
+                {% endif %}
              </div>
         </div>
         
