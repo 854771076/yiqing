@@ -9,7 +9,7 @@ def index(request):
     warmpage=request.GET.get('warmpage','')
     newspage=request.GET.get('newspage','1')
     truethpage=request.GET.get('truethpage','1')
-    trueth=requests.get(f'https://lab.isaaclin.cn/nCoV/api/rumors?rumorType={truethpage}&page=1&num=8')
+    trueth=requests.get(f'https://lab.isaaclin.cn/nCoV/api/rumors?rumorType=1&page={truethpage}&num=8')
     trueth.encodingcoding=trueth.apparent_encoding
     trueth=json.loads(trueth.text)['results']
     if warmpage=='' or warmpage=='1':
