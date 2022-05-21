@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,40 +11,281 @@
     <link rel="stylesheet" href="{%static 'css/index.css'%}">
     <link rel="stylesheet" href="{%static 'css/hero.css'%}">
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="{% static 'css/bg.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/time.css' %}">
+    <link rel="stylesheet" href="{% static 'css/warm.css' %}">
     <style>
-        .banner1{
+        .banner1 {
             position: relative;
             width: 100%;
-            height: 85vh;
+            height: 100vh;
             background: url("{%static 'images/1.jpg'%}") no-repeat;
             /* 保持原有尺寸比例，裁切长边 */
             background-size: cover;
-            /* 图片定位正中间 */    
+            /* 图片定位正中间 */
             background-position: center center;
         }
-        
-       .banner{
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(245, 59, 12, 0.5) ;
-        border-bottom: 1px black dashed;
-       }
-       #hero{
-        border-bottom: 1px black dashed;
-       }
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(245, 59, 12, 0.5);
+            border-bottom: 1px black dashed;
+        }
+
+        #hero {
+            border-bottom: 1px black dashed;
+            background-color: #ffff00d3
+        }
+
+        #Heartwarming {
+            width: 100%;
+            height: 100vh;
+            border-bottom: 1px black dashed;
+            box-sizing: border-box;
+        }
+
+        #time {
+            width: 60%;
+            height: 100vh;
+            margin: 0 auto
+        }
+
+        #left_button {
+            background-color: rgba(0, 0, 0, 0);
+            position: absolute;
+            border: 0;
+            height: 130px;
+            width: 100px;
+            top: calc(50% - 65px);
+            overflow: hidden;
+            left: 10px;
+        }
+
+        #right_button {
+            background-color: rgba(0, 0, 0, 0);
+            position: absolute;
+            border: 0;
+            height: 130px;
+            width: 100px;
+            top: calc(50% - 65px);
+            right: 10px;
+            overflow: hidden
+        }
+
+        #leftnews_button {
+            background-color: rgba(0, 0, 0, 0);
+            position: absolute;
+            border: 0;
+            height: 130px;
+            width: 100px;
+            top: calc(50% - 65px);
+            overflow: hidden;
+            left: 10px;
+        }
+
+        #rightnews_button {
+            background-color: rgba(0, 0, 0, 0);
+            position: absolute;
+            border: 0;
+            height: 130px;
+            width: 100px;
+            top: calc(50% - 65px);
+            right: 10px;
+            overflow: hidden
+        }
+
+        #lefttrueth_button {
+            background-color: rgba(0, 0, 0, 0);
+            position: absolute;
+            border: 0;
+            height: 130px;
+            width: 100px;
+            top: calc(50% - 65px);
+            overflow: hidden;
+            left: 10px;
+        }
+
+        #righttrueth_button {
+            background-color: rgba(0, 0, 0, 0);
+            position: absolute;
+            border: 0;
+            height: 130px;
+            width: 100px;
+            top: calc(50% - 65px);
+            right: 10px;
+            overflow: hidden
+        }
+
+        #rightnews_button:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        #leftnews_button:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        #right_button:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        #left_button:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        #righttrueth_button:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        #lefttrueth_button:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        #news {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            box-sizing: border-box;
+            background-color: skyblue;
+        }
+
+        #ncontents {
+            width: 70%;
+            height: 80%;
+
+            position: absolute;
+            top: 10%;
+            left: 15%;
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-between;
+            justify-content: space-between;
+        }
+
+        #ncontents>div {
+
+
+            width: 45%;
+            height: 25%;
+            display: flex;
+            padding: 15px 15px;
+            box-sizing: border-box
+        }
+
+        #ncontents>div>div {
+            width: 100%;
+            height: 100%;
+
+
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        #ncontents>div>div>div {
+            width: 100%;
+            padding: 0 5px;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        #ncontents>div>div>div a {
+            color: white;
+            text-decoration: none;
+
+        }
+
+        #tcontents {
+            width: 70%;
+            height: 80%;
+
+            position: absolute;
+            top: 10%;
+            left: 15%;
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-between;
+            justify-content: space-between;
+        }
+
+        #tcontents>div {
+
+
+            width: 45%;
+            height: 25%;
+            display: flex;
+            padding: 15px 15px;
+            box-sizing: border-box
+        }
+
+        #tcontents>div>div {
+            width: 100%;
+            height: 100%;
+
+
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        #tcontents>div>div>div {
+            width: 100%;
+            padding: 0 5px;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        #tcontents>div>div>div a {
+            color: white;
+            text-decoration: none;
+
+        }
+
+        #trueth {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            box-sizing: border-box;
+            background-color: skyblue;
+        }
+        #tophome{
+            display: none;
+            position: fixed;
+            right:20px;
+            top:70%;
+            z-index:100
+        }
+        #tophome>img{
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0,0,0,0.2);
+        }
+        #tophome>img:hover{
+            
+            background-color: rgba(0,0,0,0.6);
+        }
     </style>
 </head>
 
-<body>
+<body style="position:relative">
+    <a href="#" id="tophome"><img src="{% static 'images/top.png'  %}"></a>
     <header>
         <a href="#" class="logo">疫情之下</a>
         <ul>
             <li><a href="#">首页</a></li>
             <li><a href="#hero">抗疫英雄</a></li>
-            <li><a href="#">暖心事迹</a></li>
-            <li><a href="#">溯源进展</a></li>
-            <li><a href="#">最新消息</a></li>
-            <li><a href="#">掌握情报</a></li>
+            <li><a href="#Heartwarming">暖心事迹</a></li>
+            <li><a href="#news">最新消息</a></li>
+            <li><a href="#trueth">掌握情报</a></li>
+            <li><a href="#time">疫情大事件</a></li>
             <!-- https://lab.isaaclin.cn/nCoV/api/rumors?page=1&num=60&rumorType=1 -->
         </ul>
     </header>
@@ -51,13 +293,13 @@
         <section class="banner1"></section>
     </div>
     
-    <div id="hero" >
-       
+
+    <div id="hero">
+
         {% for hero in heros %}
-        {% if hero.index < 5 %}
-        <div class="hero1">
+        {% if hero.index < 5 %} <div class="hero1">
             <div class="card ">
-            
+
                 <div class="photo">
                     <img src="{{hero.图片url}}" alt="">
                 </div>
@@ -66,91 +308,465 @@
                 <p>{{hero.事迹}}</p>
                 <a href="{{hero.url}}">了解更多</a>
             </div>
-        </div>
-         
-        {% else %}
-        <div class="hero2" style="display:none">
-            <div class="card" >
-                <div class="photo">
-                    <img src="{{hero.图片url}}" alt="">
-                </div>
-                <h1>{{hero.姓名}}</h1>
-                <h2>{{hero.简介}}</h2>
-                <p>{{hero.事迹}}</p>
-                <a href="{{hero.url}}">了解更多</a>
-            </div> 
-        </div>
-        
-        {% endif %}
-        {% endfor %}
     </div>
-    
+
+    {% else %}
+    <div class="hero2" style="display:none">
+        <div class="card">
+            <div class="photo">
+                <img src="{{hero.图片url}}" alt="">
+            </div>
+            <h1>{{hero.姓名}}</h1>
+            <h2>{{hero.简介}}</h2>
+            <p>{{hero.事迹}}</p>
+            <a href="{{hero.url}}">了解更多</a>
+        </div>
+    </div>
+
+    {% endif %}
+    {% endfor %}
+    </div>
+
+    <div id="Heartwarming" style="position:relative">
+        <!-- <div class="container" style="position:fixed"></div> -->
+        <a id="left_button" href="javascript:;"><img src="{% static 'images/左箭头.png' %}"></a>
+        <a id="right_button" href="javascript:;"><img src="{% static 'images/右箭头.png' %}"></a>
+        <script>
+            let warmpage = Number('{{warmpage}}')
+            let endpage = Number('{{warmendpage}}')
+            let left_button = document.querySelector('#left_button')
+            let right_button = document.querySelector('#right_button')
+            if (warmpage == 1) {
+                left_button.href = '?warmpage=' + endpage + '#Heartwarming'
+                right_button.href = '?warmpage=' + (warmpage + 1) + '#Heartwarming'
+            } else if (warmpage > 1 && warmpage < endpage) {
+                left_button.href = '?warmpage=' + (warmpage - 1) + '#Heartwarming'
+                right_button.href = '?warmpage=' + (warmpage + 1) + '#Heartwarming'
+            } else if (warmpage == endpage) {
+                left_button.href = '?warmpage=' + (warmpage - 1) + '#Heartwarming'
+                right_button.href = '?warmpage=' + 1 + '#Heartwarming'
+            }
+
+        </script>
+        <div class="warmcontents" style="background-color:#112128">
+
+            <div class="warmcontainer">
+                {% for warm in warms %}
+                <div class="warmcard">
+                    <div class="imgbox">
+                        <img src="{{warm.picurl}}">
+                    </div>
+                    <div class="warmcontent">
+                        <h2>{{warm.title}}</h2>
+
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;{{warm.content}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="news">
+
+        <a id="leftnews_button" href="javascript:;"><img src="{% static 'images/左箭头2.png' %}"></a>
+        <a id="rightnews_button" href="javascript:;"><img src="{% static 'images/右箭头2.png' %}"></a>
+        <div id="ncontents">
+
+
+        </div>
+    </div>
+
+    <div id="trueth">
+
+        <a id="lefttrueth_button" href="javascript:;"><img src="{% static 'images/左箭头2.png' %}"></a>
+        <a id="righttrueth_button" href="javascript:;"><img src="{% static 'images/右箭头2.png' %}"></a>
+        <div id="tcontents">
+            {% for true in trueth %}
+            <div>
+                <div>
+                    <div style="height:35px;text-align:center;background-color:#ea4335;color:white">
+                        <a href="{{true.sourceUrl}}"
+                            style="margin:0 atuo;display:block;height:100%;font-size:20px;width:100%;overflow:hidden">{{true.title}}</a>
+                    </div>
+                    <div
+                        style="flex:4.8;font-size:14px;color:black;padding-top:5px;overflow:hidden;text-overflow:ellipsis;display: -webkit-box;;-webkit-line-clamp: 5; -webkit-box-orient: vertical;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;{{true.body}}</div>
+
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div style="background-color: #111;width:100%; height:100%">
+        <div id="time" style="overflow:hidden">
+            <div style="width:calc(100% + 20px);overflow:auto;height:100%">
+                <div class="container">
+                    <div class="timeline">
+                        <ul>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-1-20</h3>
+                                    <h1>国务院将新冠肺炎纳入法定传染病</h1>
+                                    <p>钟南山通过央视确定新冠肺炎”人传人”</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-1-21</h3>
+                                    <h1>中国科技部召开了会议</h1>
+                                    <p>
+                                        会议最终决定：五条路线同时推进！<br>
+                                        研发新冠疫苗有五大路线：<br>
+                                        1、灭活疫苗<br>
+                                        2、核酸疫苗<br>
+                                        3、重组蛋白疫苗<br>
+                                        4、腺病毒载体疫苗<br>
+                                        5、减毒流感病毒载体疫苗<br>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-1-23</h3>
+                                    <h1>武汉”封城”</h1>
+                                    <p>武汉当日上午10点起”封城”</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-1-24</h3>
+                                    <h1>毒种成功分离</h1>
+                                    <p>中国疾控中心成功分离中国首株新型冠状病毒毒种</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-1-28</h3>
+                                    <h1>mRNA疫苗研发</h1>
+                                    <p>从同济大学附属东方医院获悉，同济大学附属东方医院转化医学平台与斯微（上海）生物科技有限公司合作，依托“上海张江国家自主创新示范区干细胞战略库与干细胞技术临床转化平台”课题子任务——mRNA合成平台成果，快速推动新型冠状病毒mRNA疫苗研发。该项目已紧急完成立项备案。
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-2-5</h3>
+                                    <h1>日本钻石公主号传染</h1>
+                                    <p>国外疫情传播的开始</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-2-7</h3>
+                                    <h1>吹哨人李文亮感染上新冠去世</h1>
+                                    <p>李文亮医生7日凌晨不幸被新冠肺炎夺去了生命。他的英年早逝令我们非常难过。新冠肺炎迄今的死亡病例大多发生在中老年身上，年仅34岁的李文亮医生是逝者当中非常年轻的之一，这尤其令人唏嘘，令人悲恸。
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-2-15</h3>
+                                    <h1>疫苗研发专班成立</h1>
+                                    <p>根据党中央决策部署，在中央应对疫情工作领导小组和国务院联防联控机制领导下，科研攻关组着手布局疫苗研发任务。科研攻关组下设的疫苗研发专班成立。
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-3-18</h3>
+                                    <h1>疫苗临床试验</h1>
+                                    <p>国家卫健委高级别专家组组长、中国工程院院士钟南山在参加广州市疫情防控发布会时表示，中国新冠肺炎疫苗已通过动物实验，将用于人体临床实验。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-4-12</h3>
+                                    <h1>新冠病毒灭活疫苗获批进入临床试验</h1>
+                                    <p>国药集团中国生物武汉生物制品研究所和中国科学院武汉病毒研究所联合申请的新冠病毒灭活疫苗获批进入临床试验</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-4-13</h3>
+                                    <h1>中国新冠病毒疫苗进入II期临床试验</h1>
+                                    <p>同日，一个由全球120多名科学家、医生、资助者和生产商组成的专家组发表公开宣言，承诺在世界卫生组织协调下，共同努力加快新冠疫苗的研发。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-5-26</h3>
+                                    <h1>临床试验的积极结果</h1>
+                                    <p>国际权威医学期刊《柳叶刀》发表论文，介绍了中国团队开发的一种新冠病毒候选疫苗一期临床试验的积极结果。接种3种不同剂量候选疫苗的志愿者都产生了针对新冠病毒的中和抗体和T细胞免疫应答，同时显示了很好的耐受性；接种后28天内，大多数人体内中和抗体增加了4倍以上。
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-6-16</h3>
+                                    <h1>新冠病毒灭活疫苗Ⅰ/Ⅱ期临床试验盲态审核</h1>
+                                    <p>中国医药集团武汉生物制品研究所研制的新冠病毒灭活疫苗Ⅰ/Ⅱ期临床试验盲态审核暨阶段性揭盲会在北京、河南两地同步举行。国务院联防联控机制疫苗专班、科技部生物技术发展中心有关专家出席。揭盲结果显示：疫苗接种后安全性好；无一例严重不良反应；不同程序、不同剂量接种后，疫苗组接种者均产生高滴度抗体；28天程序接种两剂后；中和抗体阳转率达100%。
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-6-19</h3>
+                                    <h1>mRNA疫苗临床试验</h1>
+                                    <p>中国首个新冠mRNA疫苗获批启动临床试验</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-6-27</h3>
+                                    <h1>全球已有超过200个候选疫苗</h1>
+                                    <p>全球已有超过200个候选疫苗，其中15个正在进行人体临床试验。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-7-20</h3>
+                                    <h1>新冠疫苗总量已达16款</h1>
+                                    <p>获批上市或紧急使用的新冠疫苗总量已达16款，疫苗最大产能超150亿剂。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2020-10-8</h3>
+                                    <h1>中国加入“新冠肺炎疫苗实施计划”</h1>
+                                    <p>中国同全球疫苗免疫联盟签署协议，正式加入“新冠肺炎疫苗实施计划”</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2021-1-30</h3>
+                                    <h1>中国1个疫苗已经附条件上市</h1>
+                                    <p>科技部相关负责人在首届中国血液学科发展大会上表示，中国已经有16个新冠病毒疫苗进入临床试验阶段，其中7个新冠病毒疫苗进入Ⅲ期临床试验阶段，1个疫苗已经附条件上市。
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2021-2-25</h3>
+                                    <h1>中国新冠疫苗已经达到4个</h1>
+                                    <p>中国已经附条件上市的新冠疫苗已经达到4个，其中三个灭活疫苗，一个腺病毒载体疫苗</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2021-3-27</h3>
+                                    <h1>疫苗接种超过一亿剂次</h1>
+                                    <p>全国累计报告接种新冠病毒疫苗超过一亿剂次</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2021-5-7</h3>
+                                    <h1>中国国药新冠疫苗获世卫组织紧急使用认证</h1>
+                                    <!-- <p>中国国药新冠疫苗获世卫组织紧急使用认证</p> -->
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2021-6-1</h3>
+                                    <h1>中国科兴新冠疫苗获世卫组织紧急使用授权</h1>
+                                    <!-- <p>中国国药新冠疫苗获世卫组织紧急使用认证</p> -->
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2021-11-17</h3>
+                                    <h1>加强针“混打”计划</h1>
+                                    <p>新冠疫苗加强针“混打”计划已提上日程。国务院联防联控机制科研攻关组疫苗研发专班工作组组长郑忠伟在接受采访时透露，现阶段我国采用已接种过的原疫苗进行加强免疫，下一步将推出不同技术路线的加强免疫组合。
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2021-11-28</h3>
+                                    <h1>南非变异病毒奥密克戎</h1>
+                                    <p>将奥密克戎变异毒株的全球总体风险评估为“非常高”</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2022-3-19</h3>
+                                    <h1>病毒奥密克戎疫苗进展</h1>
+                                    <p>在国务院联防联控机制新闻发布会上，郑忠伟介绍，针对奥密克戎变异株单价以及多价的疫苗研发已经取得了积极进展，进展比较快的已经完成了临床前的研究，正在向国家药监部门滚动提交有关临床试验的申报材料。
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2022-5-1</h3>
+                                    <h1>病毒奥密克戎疫苗进入临床试验</h1>
+                                    <p>由国药集团中国生物北京生物制品研究所研发的奥密克戎变异株（以下简称奥株）新冠病毒灭活疫苗临床研究，正式在浙江省杭州市完成第一剂接种。这是全球首支针对奥密克戎变异株进入临床试验的新冠病毒灭活疫苗。
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-content">
+                                    <h3 class="date">2022-5-19</h3>
+                                    <h1>世卫组织宣布将腺病毒载体新冠疫苗克威莎列入“紧急使用清单”</h1>
+                                    <p>世卫组织宣布将腺病毒载体新冠疫苗克威莎（CONVIDECIA）列入“紧急使用清单”，这是第11种获得世卫组织紧急使用授权的新冠疫苗，由中国康希诺生物股份公司生产。该疫苗为单剂接种的腺病毒载体新冠疫苗，可用于18岁以上人群。
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script>
-        window.addEventListener("scroll",()=>{
-            let header=document.querySelector("header");
-            let logo=document.querySelector("header>a");
-            let height=$(window).height()
+        function newsdata(p = 1) {
+            $.get(
+                "https://lab.isaaclin.cn/nCoV/api/news",
+                {
+                    page: p,
+                    num: "8",
+                },
+                function (data, status) {
+                    var news = document.querySelector('#ncontents')
+                    html = ''
+                    div = ''
+                    data = data.results
+                    for (var i = 0; i < data.length; i++) {
+                        date = new Date(Number(data[i].pubDate))
+                        div = '<div><div><div style="height:35px;text-align:center;background-color:#ea4335;color:white"><a href="' + data[i].sourceUrl + '" style="margin:0 atuo;display:block;height:100%;font-size:20px;width:100%;overflow:hidden">国家卫健委 | 昨日新增本土确诊病例 181+951 例</a> </div><div style="flex:3.8;font-size:14px;color:black;padding-top:5px;overflow:hidden;text-overflow:ellipsis;display: -webkit-box;;-webkit-line-clamp: 5; -webkit-box-orient: vertical;">&nbsp;&nbsp;&nbsp;&nbsp;' + data[i].summary + '</div><div style="flex:1.5;color:gray;"><span id="newtime" style="flex:1">' + date.toLocaleDateString().replace(/\//g, "-") + " " + date.toTimeString().substr(0, 8) + '</span><span id="source" style="flex:1;text-align:right">' + data[i].infoSource + '</span></div></div></div>'
+                        html += div;
 
-            header.classList.toggle("sticky",window.scrollY>0);
-            if(window.scrollY<height*0.95){
-                logo.innerHTML='疫情之下'
+                    }
+
+                    news.innerHTML = html;
+
+                }
+            );
+        }
+        $(document).ready(function () {
+            let newspage = Number('{{newspage}}')
+            newsdata(p = newspage);
+            let endnewspage = 10
+            let leftnews_button = document.querySelector('#leftnews_button')
+            let rightnews_button = document.querySelector('#rightnews_button')
+            if (newspage == 1) {
+                leftnews_button.href = '?newspage=' + endnewspage + '#news'
+                rightnews_button.href = '?newspage=' + (newspage + 1) + '#news'
+            } else if (newspage > 1 && newspage < endnewspage) {
+                leftnews_button.href = '?newspage=' + (newspage - 1) + '#news'
+                rightnews_button.href = '?newspage=' + (newspage + 1) + '#news'
+            } else if (newspage == endnewspage) {
+                leftnews_button.href = '?newspage=' + (newspage - 1) + '#news'
+                rightnews_button.href = '?newspage=' + 1 + '#news'
             }
-            else if(window.scrollY<height*2){
-                logo.innerHTML='疫情英雄'
+
+
+        });
+        let truethpage = Number('{{truethpage}}')
+        let endtruethpage = 2
+        let lefttrueth_button = document.querySelector('#lefttrueth_button')
+        let righttrueth_button = document.querySelector('#righttrueth_button')
+        if (truethpage == 1) {
+            lefttrueth_button.href = '?truethpage=' + endtruethpage + '#trueth'
+            righttrueth_button.href = '?truethpage=' + (truethpage + 1) + '#trueth'
+        } else if (truethpage > 1 && truethpage < endtruethpage) {
+            lefttrueth_button.href = '?truethpage=' + (truethpage - 1) + '#trueth'
+            righttrueth_button.href = '?truethpage=' + (truethpage + 1) + '#trueth'
+        } else if (truethpage == endtruethpage) {
+            lefttrueth_button.href = '?truethpage=' + (truethpage - 1) + '#trueth'
+            righttrueth_button.href = '?truethpage=' + 1 + '#trueth'
+        }
+    </script>
+
+    <!-- <script src="{% static 'js/bg.js' %}"></script> -->
+
+    <script>
+        window.addEventListener("scroll", () => {
+            let header = document.querySelector("header");
+            let logo = document.querySelector("header>a");
+            let height = $(window).height()
+            let top=document.querySelector('#tophome')
+            header.classList.toggle("sticky", window.scrollY > 0);
+            if(window.scrollY > 0){
+                top.style.display='block'
             }
-            
-            
+            if (window.scrollY < height * 0.95) {
+                logo.innerHTML = '疫情之下'
+            }
+            else if (window.scrollY < height * 1.95) {
+                logo.innerHTML = '疫情英雄'
+            }
+            else if (window.scrollY < height * 2.95) {
+                logo.innerHTML = '暖心事迹'
+            }
+
+            else if (window.scrollY < height * 3.95) {
+                logo.innerHTML = '最新消息'
+            }
+            else if (window.scrollY < height * 4.95) {
+                logo.innerHTML = '掌握情报'
+            }
+            else if (window.scrollY < height * 5.95) {
+                logo.innerHTML = '疫情大事件'
+            }
         })
-        var bgimg=["url({%static 'images/1.jpg'%})","url({%static 'images/2.jpg'%})","url({%static 'images/3.jpg'%})","url({%static 'images/4.jpg'%})","url({%static 'images/5.jpg'%})"]
-        var bgimgid=0
-        function changebgimg(){
-            if(bgimgid==4){
-                bgimgid=0
+        var bgimg = ["url({%static 'images/1.jpg'%})", "url({%static 'images/2.jpg'%})", "url({%static 'images/3.jpg'%})", "url({%static 'images/4.jpg'%})", "url({%static 'images/5.jpg'%})"]
+        var bgimgid = 0
+        function changebgimg() {
+            if (bgimgid == 4) {
+                bgimgid = 0
             }
-            var banner1=document.querySelector('.banner1')
+            var banner1 = document.querySelector('.banner1')
             bgimgid++
-            banner1.style.backgroundImage=bgimg[bgimgid]
+            banner1.style.backgroundImage = bgimg[bgimgid]
         }
-        setInterval(changebgimg,5000)
-        var heroflag=0
-        function changehero(){
-            let hero1=document.querySelectorAll(".hero1");
-            let hero2=document.querySelectorAll(".hero2");
-            
-            if(heroflag==0){
-                heroflag=1
-                for(var i=0;i<hero1.length;i++){
-                    
-                    hero1[i].style.display='none';
-                    hero2[i].style.display='block';
+        setInterval(changebgimg, 5000)
+        var heroflag = 0
+        function changehero() {
+            let hero1 = document.querySelectorAll(".hero1");
+            let hero2 = document.querySelectorAll(".hero2");
+
+            if (heroflag == 0) {
+                heroflag = 1
+                for (var i = 0; i < hero1.length; i++) {
+
+                    hero1[i].style.display = 'none';
+                    hero2[i].style.display = 'block';
                 }
-                
+
             }
-            else{
-                heroflag=0
-                for(var i=0;i<hero1.length;i++){
-                    
-                    hero2[i].style.display='none';
-                    hero1[i].style.display='block';
+            else {
+                heroflag = 0
+                for (var i = 0; i < hero1.length; i++) {
+
+                    hero2[i].style.display = 'none';
+                    hero1[i].style.display = 'block';
                 }
             }
-            
+
         }
-        var Interval=setInterval(changehero,5000)
-            var cards=document.querySelectorAll(".card");
-            for(var i=0;i<cards.length;i++){
-                cards[i].addEventListener('mouseover',function(){
-                    clearInterval(Interval)
-                })
-                cards[i].addEventListener('mouseout',function(){
-                    Interval=setInterval(changehero,5000)
-                })
-            }
-        
-        
+        var Interval = setInterval(changehero, 5000)
+        var cards = document.querySelectorAll(".card");
+        for (var i = 0; i < cards.length; i++) {
+            cards[i].addEventListener('mouseover', function () {
+                clearInterval(Interval)
+            })
+            cards[i].addEventListener('mouseout', function () {
+                Interval = setInterval(changehero, 5000)
+            })
+        }
+
+
 
     </script>
-    
+
 </body>
+
 </html>

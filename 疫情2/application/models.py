@@ -11,3 +11,13 @@ class Hero(models.Model):
     class Meta:
         managed = False
         db_table = 'hero'
+        
+class Warm(models.Model):
+    wid = models.BigIntegerField(blank=True, primary_key=True)
+    title = models.TextField(blank=True, null=True)
+    content = models.TextField(blank=True, null=True)
+    picurl = models.TextField(blank=True, null=True)
+    class Meta:
+        managed = False
+        db_table = 'warm'
+        
